@@ -1,0 +1,30 @@
+.toast-success {
+  animation: slideInRight 0.5s ease-in-out, fadeOut 0.5s ease-out 3s;
+  background-color: #4caf50; // Couleur personnalisée
+}
+
+.toast-error {
+  animation: slideInRight 0.5s ease-in-out, fadeOut 0.5s ease-out 3s;
+  background-color: #f44336;
+}
+
+.toast-warning {
+  animation: slideInRight 0.5s ease-in-out, fadeOut 0.5s ease-out 3s;
+  background-color: #ff9800;
+}
+
+.toast-info {
+  animation: slideInRight 0.5s ease-in-out, fadeOut 0.5s ease-out 3s;
+  background-color: #2196f3;
+}
+.spinner-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+  }
+  

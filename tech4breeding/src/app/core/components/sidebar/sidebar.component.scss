@@ -1,0 +1,134 @@
+/* sidebar.component.css */
+.sidebar {
+  width: 250px;
+  background-color: #ffffff;
+  color: white;
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 10px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: width 0.3s ease;
+  overflow-y: hidden; 
+}
+
+.sidebar-hidden {
+  transform: translateX(-100%);
+}
+.menu-button {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1100;
+}
+.sidebar:hover {
+  overflow-y: auto; /* Show the scrollbar on hover */
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 6px; /* Thin scrollbar */
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #888; /* Scrollbar color */
+  border-radius: 10px; /* Rounded scrollbar */
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Darker color when hovering over scrollbar */
+}
+
+.sidebar-logo {
+  max-width: 30%;
+  margin-bottom: 20px;
+}
+
+.sidebar-menu {
+  width: 100%;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+.sidebar-link i {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.sidebar-link:hover {
+  background-color: #979797;
+  padding-left: 20px; /* Indentation on hover */
+}
+
+.sidebar hr {
+  width: 100%;
+  border: 0;
+  border-top: 1px solid #575757;
+  margin: 20px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 60px; /* Collapsed view for small screens */
+    align-items: flex-start;
+  }
+
+  .sidebar-logo {
+    display: none; /* Hide the logo */
+  }
+
+  .sidebar-menu {
+    width: 100%;
+  }
+
+  .sidebar-link span {
+    display: none; /* Hide the text */
+  }
+
+  .sidebar-link i {
+    font-size: 1.5rem; /* Increase icon size */
+  }
+}
+
+@media (max-width: 576px) {
+  .sidebar {
+    position: absolute;
+    z-index: 1000;
+    height: auto;
+    width: 100%; /* Full width on small devices */
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+  }
+
+  .sidebar-link {
+    padding: 5px;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .sidebar-link i {
+    margin: 0;
+  }
+
+  .sidebar-link span {
+    font-size: 0.75rem;
+    text-align: center;
+  }
+}

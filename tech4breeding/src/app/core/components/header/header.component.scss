@@ -1,0 +1,60 @@
+.header {
+  background-color: #c31d1d;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  box-shadow: 2px 2px 1px 2px rgb(255, 246, 230);
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-items li {
+  margin-left: 20px;
+  position: relative;
+}
+
+.notification .badge {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: #007bff;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+.dropdown a {
+  color: white;
+  text-decoration: none;
+}
+
+.dropdown-menu {
+  background-color: #ffffff;
+  border: 1px solid rgb(176, 176, 176);
+
+}
+
+.dropdown-menu a {
+  color: rgb(4, 4, 4);
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  background-color: #d2cfcf;
+}
+
+.user-profile .profile-photo {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}

@@ -1,0 +1,23 @@
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card p-4 shadow-sm" style="width: 100%; max-width: 500px;">
+      <h2 class="text-center mb-4">Prédire la santé du poulet</h2>
+    
+      <!-- Formulaire de téléchargement du fichier avec icône -->
+      <div class="mb-3">
+        <label for="fileInput" class="form-label">Télécharger une image du poulet</label>
+                <div class="input-group mt-2">
+            <input type="file" id="fileInput" class="form-control" (change)="onFileSelected($event)" />
+            <span class="input-group-text" id="basic-addon2">
+              <i class="bi bi-box-arrow-in-down"></i>
+            </span>
+          </div>
+      </div>
+    
+      <!-- Bouton de soumission -->
+      <div class="text-center">
+        <button class="btn btn-primary" (click)="onSubmit()">Soumettre</button>
+      </div>
+<a href="/details-analyse">Voir les Anomalies</a>
+    </div>
+  </div>
+  

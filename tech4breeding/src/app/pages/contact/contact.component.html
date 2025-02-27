@@ -1,0 +1,110 @@
+
+            <style>
+              body {
+                background: linear-gradient(43deg, hsla(0, 0%, 41.2%, .02), hsla(0, 0%, 41.2%, .02) 62%, hsla(0, 0%, 89%, .02) 0, hsla(0, 0%, 89%, .02) 69%, rgba(24, 24, 24, .02) 0, rgba(24, 24, 24, .02) 80%, rgba(13, 13, 13, .02) 0, rgba(13, 13, 13, .02) 82%, rgba(13, 13, 13, .02) 0, rgba(13, 13, 13, .02)), linear-gradient(31deg, hsla(0, 0%, 60.8%, .02), hsla(0, 0%, 60.8%, .02) 29%, hsla(0, 0%, 64.3%, .02) 0, hsla(0, 0%, 64.3%, .02) 41%, hsla(0, 0%, 78.4%, .02) 0, hsla(0, 0%, 78.4%, .02) 74%, hsla(0, 0%, 89.8%, .02) 0, hsla(0, 0%, 89.8%, .02) 79%, rgba(15, 15, 15, .02) 0, rgba(15, 15, 15, .02)), linear-gradient(319deg, rgba(39, 39, 39, .02), rgba(39, 39, 39, .02) 17%, rgba(49, 49, 49, .02) 0, rgba(49, 49, 49, .02) 25%, rgba(59, 59, 59, .02) 0, rgba(59, 59, 59, .02) 32%, hsla(0, 0%, 76.1%, .02) 0, hsla(0, 0%, 76.1%, .02) 46%, hsla(0, 0%, 86.3%, .02) 0, hsla(0, 0%, 86.3%, .02)), linear-gradient(113deg, hsla(0, 0%, 73.7%, .02), hsla(0, 0%, 73.7%, .02) 15%, hsla(0, 0%, 87.5%, .02) 0, hsla(0, 0%, 87.5%, .02) 46%, rgba(21, 21, 21, .02) 0, rgba(21, 21, 21, .02) 88%, rgba(93, 93, 93, .02) 0, rgba(93, 93, 93, .02) 94%, hsla(0, 0%, 51%, .02) 0, hsla(0, 0%, 51%, .02)), linear-gradient(29deg, hsla(0, 0%, 52.5%, .02), hsla(0, 0%, 52.5%, .02) 27%, hsla(0, 0%, 71%, .02) 0, hsla(0, 0%, 71%, .02) 41%, rgba(81, 81, 81, .02) 0, rgba(81, 81, 81, .02) 46%, hsla(0, 0%, 99.2%, .02) 0, hsla(0, 0%, 99.2%, .02) 58%, rgba(74, 74, 74, .02) 0, rgba(74, 74, 74, .02)), linear-gradient(90deg, #e5e5e5, #e4e4e4);
+              }
+
+              .register-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+              }
+
+              .register-card {
+                display: flex;
+                flex-direction: row;
+                border: none;
+                padding: 2rem;
+                box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+                background: #ffffff;
+                border-radius: 1rem;
+                width: 100%;
+                max-width: 900px;
+              }
+
+              .register-image {
+                max-width: 100%;
+                border-radius: 0.5rem;
+              }
+
+              .register-form {
+                width: 100%;
+              }
+
+              .form-check-label {
+                padding-top: 0.4rem;
+              }
+
+              .btn-social {
+                margin: 0.2rem;
+              }
+
+              @media (max-width: 768px) {
+                .register-card {
+                  flex-direction: column;
+                }
+
+                .register-image {
+                  max-width: 80%;
+                  margin-bottom: 1rem;
+                }
+
+                .register-form {
+                  width: 100%;
+                }
+              }
+            </style>
+            <body>
+          <div class="container register-container">
+     <!--       <div class="spinner-container">
+              <div class="spinner-grow text-primary" role="status">
+              </div>
+              <div class="spinner-grow text-secondary" role="status">
+              </div>
+              <div class="spinner-grow text-success" role="status">
+              </div>
+
+            </div>
+-->
+
+            <div class="col-6">
+              <div class="card">
+            <div class="register-card card">
+              <div class="row no-gutters w-100">
+                <div class="col-md-6 d-flex align-items-center justify-content-center">
+                  <img src="contact.gif" class="register-image" alt="register Illustration" style="width: 70%;" />
+                </div>
+                <div class="col-md-6">
+                  <div class="register-form">
+                    <h3 class="card-title">Contacter un vétérinaire</h3>
+                    <p>Bienvenue, Viellez .......</p>
+                    <form >
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="form-group">
+                            <input type="text" class="form-control" formControlName="nom" placeholder="Titre" style="background: grey; color: whitesmoke;"  />
+                          </div>
+                        </div>
+                        <div class="col-12 mt-2">
+                          <div class="form-group">
+                            <textarea type="text" class="form-control" formControlName="prenom" placeholder="Description S" >
+                            </textarea>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group mt-2 d-flex justify-content-end">
+                        <button type="submit" class="btn rounded" style="background: #c31d1d; color: #e4e4e4;" >Envoyer</button>
+                      </div>
+                    </form>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+            </div>
+
+          </div>
+
+          </body>

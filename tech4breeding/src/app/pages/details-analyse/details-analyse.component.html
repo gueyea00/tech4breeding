@@ -1,0 +1,36 @@
+<div class="container py-3">
+  <div class="text-center mb-5">
+    <h1 class="display-4" style="color: #c31d1d;">Anomalies Détectées</h1>
+    <p class="lead">Liste des anomalies détectées via la caméra.</p>
+  </div>
+
+
+
+  <!-- Grille des Anomalies -->
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+    <div *ngFor="let prediction of predictions" class="col">
+      <div class="card h-100">
+        <!-- Image dynamique -->
+        <img src="images.jpeg" class="card-img-top" alt="Aperçu anomalie">
+        
+        <div class="card-body">
+          <!-- Titre avec la classe prédite -->
+          <h5 class="card-title">{{ prediction.class_predite }}</h5>
+          
+          <!-- Informations sur l'anomalie -->
+          <p class="card-text">
+            Confiance : {{ prediction.confiance }}%.<br>
+           
+          </p>
+          <div class="badge bg-primary text-light position-absolute" style="top: 10px; right: 10px;">
+            {{ prediction.date | date:'dd/MM/yyyy à HH:mm:ss' }}
+          </div>
+          <div class=" text-danger position-absolute" style="top: 275px; right: 10px;">
+           <!-- <i class="bi bi-trash small" style="cursor: po;"></i> -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

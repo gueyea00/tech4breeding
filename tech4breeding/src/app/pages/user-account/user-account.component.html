@@ -1,0 +1,118 @@
+<div class="container mt-3">
+  <div class="text">
+    <h3>Liste des Utilisateurs</h3>
+  </div>
+
+  <!-- Alignement du bouton à droite -->
+  <div class="d-flex justify-content-end mb-3">
+    <button class="btn btn-outline-primary" (click)="openModal()">Ajouter un utilisateur</button>
+  </div>
+
+  <!-- Modal pour l'inscription -->
+  <div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addUserModalLabel">Ajouter un utilisateur</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Formulaire d'inscription -->
+          <form (ngSubmit)="submitForm()" #userForm="ngForm">
+            <div class="row">
+              <div class="col-md-6 mb-3" *ngFor="let field of fields; let i = index">
+                <label [for]="field.key" class="form-label w-100">{{ field.label }}</label>
+                <input 
+                  [type]="field.type" 
+                  class="form-control" 
+                  [id]="field.key" 
+                  [(ngModel)]="newUser[field.key]" 
+                  [name]="field.key" 
+                  required 
+                  style="width: 200px; height: 50px;" />
+              </div>
+            </div>
+            
+            <div class="d-flex justify-content-end">
+              <button type="submit" class="btn btn-primary mt-3">Créer</button>
+            </div>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tableau des utilisateurs -->
+  <div class="card">
+    <div class="card-body">
+      <div class="datatable-container position-relative">
+        <ngx-spinner bdColor="rgba(0, 0, 0, 0.5)" size="medium" color="#fff" type="circle" [fullScreen]="false" [id]="'loadingSpinner'">
+          <div class="spinner-grow mr-2">
+          </div>
+          <div class="spinner-grow mr-2">
+          </div><div class="spinner-grow">
+          </div>
+        </ngx-spinner>
+      <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-striped table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nom & Prénom</th>
+            <th>Email</th>
+            <th>Numéro</th>
+            <th>Localisation</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+           <!-- Affiche un spinner pendant le chargement des données -->
+       
+          <tr *ngFor="let item of userList">
+            <td>{{ item.id_user }}</td>
+            <td>{{ item.nom }} {{ item.prenom }}</td>
+            <td>{{ item.email }}</td>
+            <td>{{ item.telephone }}</td>
+            <td>{{ item.mot_de_passe }}</td>
+            <td>
+  <!-- Modifier -->
+   <div class="d-flex">
+  <!-- <div class="text-primary btn-sm me-2 cursor-pointer" (click)="editUser(item)">
+    <i class="bi bi-pencil-square"></i>
+  </div>
+   -->
+  <!-- Supprimer -->
+  <div class=" btn-sm me-2 cursor-pointer" (click)="confirmDelete(item.id_user)">
+    <i class="bi bi-trash text-danger"></i>
+  </div>
+  
+
+</div>
+</td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de confirmation de suppression -->
+<div class="modal fade" id="deleteConfirmModal" tabindex="-1" aria-labelledby="deleteConfirmModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteConfirmModalLabel">Confirmer la suppression</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Êtes-vous sûr de vouloir supprimer cet utilisateur ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+        <button type="button" class="btn btn-danger" (click)="deleteUser(deleteUserId)">Supprimer</button>
+      </div>
+    </div>
+  </div>
+</div>

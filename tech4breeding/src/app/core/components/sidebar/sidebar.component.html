@@ -1,0 +1,29 @@
+<div class="sidebar d-none d-md-block">
+  <div class="d-flex justify-content-between w-100">
+    <img [src]="cheminImage" alt="Logo" class="sidebar-logo" />
+    <button class="sidebar-toggle border-0 bg-danger h-50 rounded text-white" (click)="toggleSidebar()">
+      <i class="bi bi-list"></i>
+    </button>
+  </div>
+
+  <hr style="margin: 0px" />
+  <ul class="sidebar-menu">
+    <li *ngFor="let item of filteredMenu">
+      <a 
+        [routerLink]="item.link" 
+        class="sidebar-link" 
+        (click)="item.subItems ? toggleSubItems(item) : (item.action ? item.action() : null)">
+        <i class="text-black" [class]="item.icon"></i>
+        <span class="text-black">{{ item.label }}</span>
+      </a>
+      <ul *ngIf="item.isOpen">
+        <li *ngFor="let subItem of item.subItems">
+          <a [routerLink]="subItem.link" class="sidebar-link">
+            <i class="text-black" [class]="subItem.icon"></i>
+            <span class="text-black">{{ subItem.label }}</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

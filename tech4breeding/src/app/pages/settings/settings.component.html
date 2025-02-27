@@ -1,0 +1,60 @@
+<div class="container mt-3">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body"  style="min-height: 85vh;">
+                <input type="text" placeholder="Rechercher" class="form-control mb-3">
+          <ul class="list-group">
+            <li 
+              *ngFor="let item of menuItems; let i = index" 
+              (click)="selectMenuItem(i)"
+              [class.active]="selectedMenuItem === i" 
+              class="list-group-item"
+              style="padding: 20px;cursor: pointer;"
+            >
+              {{ item }}
+            </li>
+          </ul>
+            </div>
+          </div>
+        
+        </div>
+          <div class="col-md-8">
+            <div class="card">
+            <div class="card-body " >
+                
+                  <!-- Sécurité -->
+                  <div *ngIf="selectedMenuItem === 0">
+                    <h5>Sécurité</h5>
+                    <form [formGroup]="securityForm">
+                      <div class="mb-3">
+                        <label for="mot_de_passe" class="form-label">Nouveau mot de passe</label>
+                        <input type="password" id="mot_de_passe" class="form-control" formControlName="mot_de_passe">
+                      </div>
+                      <div class="mb-3">
+                        <label for="confirmPassword" class="form-label">Confirmer le mot de passe</label>
+                        <input type="password" id="confirmPassword" class="form-control" formControlName="confirmPassword">
+                      </div>
+                      <div class="form-check mb-3">
+                        <input type="checkbox" id="2fa" class="form-check-input" formControlName="enable2FA">
+                        <label for="2fa" class="form-check-label">Activer l’authentification à deux facteurs</label>
+                      </div>
+                      <button type="button" class="btn btn-secondary" (click)="updateSecurity()">Mettre à jour</button>
+                    </form>
+                    
+                  </div>
+     
+                  <!-- Supprimer le compte -->
+                  <div *ngIf="selectedMenuItem === 1">
+                    <h6>Supprimer le compte</h6>
+                    <p><strong>Attention :</strong> La suppression de votre compte est définitive.</p>
+                    <p>Si vous souhaitez poursuivre, cliquez sur le bouton ci-dessous :</p>
+                    <button class="btn btn-danger">Supprimer mon compte</button>
+                  </div>
+                </div>
+                
+              </div>
+          </div>
+      </div>
+    </div>
+ 

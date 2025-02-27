@@ -1,0 +1,42 @@
+<div class="container pt-3">
+      <!-- First row with two charts -->
+      <div class="row">
+        <!-- First chart card (6/12 width on medium screens) -->
+    
+        <!-- Second chart card (6/12 width on medium screens) -->
+        <div class="col-12 col-md-6">
+          <div class="card">
+            <div class="card-body">
+  
+              <h5 class="card-title">Répartition de la Santé des Poulets</h5>
+              <apx-chart
+                [series]="chartOptions1.series"
+                [chart]="chartOptions1.chart"
+                [title]="chartOptions1.title"
+                [labels]="chartOptions1.labels"
+              ></apx-chart>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Second row with the third chart -->
+      <!-- <div class="row mt-3">
+        <div class="col-12 col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Analyse des Poulets Malades</h5>
+              <apx-chart
+                [series]="chartOptions2.series"
+                [chart]="chartOptions2.chart"
+                [title]="chartOptions2.title"
+                [xaxis]="chartOptions2.xaxis"
+              ></apx-chart>
+  
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+    

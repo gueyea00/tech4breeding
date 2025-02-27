@@ -1,0 +1,177 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.5)" size="medium" color="#fff" type="circle" [fullScreen]="false" [id]="'loadingSpinner'">
+    <div class="spinner-container">
+        <div class="spinner-grow text-primary" role="status">
+        </div>
+        <div class="spinner-grow text-secondary" role="status">
+        </div>
+        <div class="spinner-grow text-success" role="status">
+        </div>
+      </div>
+      
+</ngx-spinner>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'Enregistrement</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(43deg, hsla(0, 0%, 41.2%, .02), hsla(0, 0%, 41.2%, .02) 62%, hsla(0, 0%, 89%, .02) 0, hsla(0, 0%, 89%, .02) 69%, rgba(24, 24, 24, .02) 0, rgba(24, 24, 24, .02) 80%, rgba(13, 13, 13, .02) 0, rgba(13, 13, 13, .02) 82%, rgba(13, 13, 13, .02) 0, rgba(13, 13, 13, .02)), linear-gradient(31deg, hsla(0, 0%, 60.8%, .02), hsla(0, 0%, 60.8%, .02) 29%, hsla(0, 0%, 64.3%, .02) 0, hsla(0, 0%, 64.3%, .02) 41%, hsla(0, 0%, 78.4%, .02) 0, hsla(0, 0%, 78.4%, .02) 74%, hsla(0, 0%, 89.8%, .02) 0, hsla(0, 0%, 89.8%, .02) 79%, rgba(15, 15, 15, .02) 0, rgba(15, 15, 15, .02)), linear-gradient(319deg, rgba(39, 39, 39, .02), rgba(39, 39, 39, .02) 17%, rgba(49, 49, 49, .02) 0, rgba(49, 49, 49, .02) 25%, rgba(59, 59, 59, .02) 0, rgba(59, 59, 59, .02) 32%, hsla(0, 0%, 76.1%, .02) 0, hsla(0, 0%, 76.1%, .02) 46%, hsla(0, 0%, 86.3%, .02) 0, hsla(0, 0%, 86.3%, .02)), linear-gradient(113deg, hsla(0, 0%, 73.7%, .02), hsla(0, 0%, 73.7%, .02) 15%, hsla(0, 0%, 87.5%, .02) 0, hsla(0, 0%, 87.5%, .02) 46%, rgba(21, 21, 21, .02) 0, rgba(21, 21, 21, .02) 88%, rgba(93, 93, 93, .02) 0, rgba(93, 93, 93, .02) 94%, hsla(0, 0%, 51%, .02) 0, hsla(0, 0%, 51%, .02)), linear-gradient(29deg, hsla(0, 0%, 52.5%, .02), hsla(0, 0%, 52.5%, .02) 27%, hsla(0, 0%, 71%, .02) 0, hsla(0, 0%, 71%, .02) 41%, rgba(81, 81, 81, .02) 0, rgba(81, 81, 81, .02) 46%, hsla(0, 0%, 99.2%, .02) 0, hsla(0, 0%, 99.2%, .02) 58%, rgba(74, 74, 74, .02) 0, rgba(74, 74, 74, .02)), linear-gradient(90deg, #e5e5e5, #e4e4e4);
+        }
+
+        .register-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .register-card {
+            display: flex;
+            flex-direction: row;
+            border: none;
+            padding: 2rem;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+            background: #ffffff;
+            border-radius: 1rem;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .register-image {
+            max-width: 100%;
+            border-radius: 0.5rem;
+        }
+
+        .register-form {
+            width: 100%;
+        }
+
+        .form-check-label {
+            padding-top: 0.4rem;
+        }
+
+        .btn-social {
+            margin: 0.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .register-card {
+                flex-direction: column;
+            }
+
+            .register-image {
+                max-width: 80%;
+                margin-bottom: 1rem;
+            }
+
+            .register-form {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container register-container">
+        <div class="register-card card">
+            <div class="row no-gutters w-100">
+                <div class="col-md-6 d-flex align-items-center justify-content-center">
+                    <img src="register.gif" class="register-image" alt="register Illustration" style="width: 70%;" />
+                </div>
+                <div class="col-md-6">
+                    <div class="register-form">
+                        <h3 class="card-title">Enregistrement</h3>
+                        <p>Bienvenue, veuillez vous enregistrer pour accéder à votre compte.</p>
+                        <form [formGroup]="registerForm" (ngSubmit)="registerUser()">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" formControlName="nom" placeholder="Nom" />
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" formControlName="prenom" placeholder="Prénom" />
+                                        <!-- <small class="text-danger" *ngIf="registerForm.get('prenom')?.invalid && registerForm.get('prenom')?.touched">
+                                          Prénom est requis
+                                        </small>
+                                        <small class="text-success" *ngIf="registerForm.get('prenom')?.valid && registerForm.get('prenom')?.touched">
+                                            <i class="bi bi-check2-circle"></i>
+                                        </small> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-6">
+                            <div class="form-group">
+                                <input type="email" class="form-control" formControlName="email" placeholder="Email" />
+                                <!-- <small class="text-danger" *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
+                                  Un email valide est requis
+                                </small>
+                                <small class="text-success" *ngIf="registerForm.get('email')?.valid && registerForm.get('email')?.touched">
+                                    <i class="bi bi-check2-circle"></i>
+                                </small> -->
+                            </div>
+                            </div>
+
+                            <div class="col-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" formControlName="localisation" placeholder="Localisation" />
+                                <!-- <small class="text-danger" *ngIf="registerForm.get('localisation')?.invalid && registerForm.get('localisation')?.touched">
+                                  Localisation est requise
+                                </small>
+                                <small class="text-success" *ngIf="registerForm.get('localisation')?.valid && registerForm.get('localisation')?.touched">
+                                    <i class="bi bi-check2-circle"></i>
+                                </small> -->
+                            </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" formControlName="telephone" placeholder="telephone" />
+                            <!-- <small class="text-danger" *ngIf="registerForm.get('telephone')?.invalid && registerForm.get('telephone')?.touched">
+                              Nom est requis
+                            </small>
+                            <small class="text-success" *ngIf="registerForm.get('telephone')?.valid && registerForm.get('telephone')?.touched">
+                            </small> -->
+                        </div>
+                            <div class="row">
+                            <div class="col-6">
+                            <div class="form-group">
+                                <input type="password" class="form-control" formControlName="mot_de_passe" placeholder="Mot de passe" />
+                                <!-- <i class="bi bi-eye-slash" id="togglePassword"></i> -->
+                                <!-- <small class="text-danger" *ngIf="registerForm.get('mot_de_passe')?.invalid && registerForm.get('mot_de_passe')?.touched">
+                                  Mot de passe invalide
+                                </small>
+                                <small class="text-danger" *ngIf="registerForm.get('mot_de_passe')?.valid && registerForm.get('mot_de_passe')?.touched">
+                                    Mot de passe invalide
+                                  </small> -->
+                            </div>
+                            </div>
+                            <div class="col-6 mb-3">
+                                <select class="form-select" formControlName="role">
+                                    <option value="eleveur">
+                                            eleveur
+                                    </option>
+                                    <option value="client">
+                                        client
+                                </option>
+                                </select>
+                            </div>
+                       
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block" [disabled]="registerForm.invalid">Enregistrer</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

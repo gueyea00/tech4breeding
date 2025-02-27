@@ -1,0 +1,18 @@
+<div class="header">
+  <nav>
+    <ul class="nav-items">
+      <li class="dropdown user-profile">
+        <a class="dropdown-toggle d-flex align-items-center" (mouseover)="toggleDropdown()" role="button">
+          <img [src]="userPhoto" alt="User Photo" class="profile-photo" >
+          <span>{{ userName }}</span>
+        </a>
+        <ul class="dropdown-menu" *ngIf="isDropdownOpen">
+          <li><a class="dropdown-item" routerLink="/profile">Profil</a></li>
+          <li><a class="dropdown-item" routerLink="/settings">Paramètres</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" (click)="logout()">Déconnexion</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</div>

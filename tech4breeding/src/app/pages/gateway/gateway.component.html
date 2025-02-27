@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gateway - Routes</title>
+    <!-- Liens vers Bootstrap CSS -->
+</head>
+<body>
+    <div class="container pt-5">
+        <h1>Liste des Routes de l'API</h1>
+
+        <!-- Routes d'authentification -->
+        <h3>Authentification</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Route</th>
+                    <th>Méthodes</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>/api/login</td>
+                    <td>POST</td>
+                    <td>Connexion de l'éleveur</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Routes des éleveurs -->
+        <h3>Éleveurs</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Route</th>
+                    <th>Méthodes</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>/api/eleveurs</td>
+                    <td>GET</td>
+                    <td>Récupérer tous les éleveurs</td>
+                </tr>
+                <tr>
+                    <td>/api/eleveurs/&lbrace;id&rbrace;</td>
+                    <td>GET</td>
+                    <td>Récupérer un éleveur par ID</td>
+                </tr>
+                <tr>
+                    <td>/api/eleveurs/&lbrace;id&rbrace;</td>
+                    <td>DELETE</td>
+                    <td>Supprimer un éleveur</td>
+                </tr>
+                <tr>
+                    <td>/api/eleveurs/&lbrace;id&rbrace;</td>
+                    <td>PUT</td>
+                    <td>Mettre à jour un éleveur</td>
+                </tr>
+                <tr>
+                    <td>/api/eleveurs</td>
+                    <td>POST</td>
+                    <td>Ajouter un éleveur</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Routes des enclos -->
+        <h3>Enclos</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Route</th>
+                    <th>Méthodes</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>/api/enclos</td>
+                    <td>GET</td>
+                    <td>Récupérer tous les enclos</td>
+                </tr>
+                <tr>
+                    <td>/api/enclos/&lbrace;id&rbrace;</td>
+                    <td>GET</td>
+                    <td>Récupérer un enclos par ID</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Routes des caméras -->
+        <h3>Caméras</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Route</th>
+                    <th>Méthodes</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>/api/cameras</td>
+                    <td>GET</td>
+                    <td>Récupérer toutes les caméras</td>
+                </tr>
+                <tr>
+                    <td>/api/cameras/&lbrace;id&rbrace;</td>
+                    <td>GET</td>
+                    <td>Récupérer une caméra par ID</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Routes des poulets -->
+        <h3>Poulets</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Route</th>
+                    <th>Méthodes</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>/api/poulets</td>
+                    <td>GET</td>
+                    <td>Récupérer tous les poulets</td>
+                </tr>
+                <tr>
+                    <td>/api/poulets/&lbrace;id&rbrace;</td>
+                    <td>GET</td>
+                    <td>Récupérer un poulet par ID</td>
+                </tr>
+                <tr>
+                    <td>/api/poulets/&lbrace;id&rbrace;</td>
+                    <td>PUT</td>
+                    <td>Mettre à jour un poulet</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Routes des observations -->
+        <h3>Observations</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Route</th>
+                    <th>Méthodes</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>/api/observations</td>
+                    <td>GET</td>
+                    <td>Récupérer toutes les observations</td>
+                </tr>
+                <tr>
+                    <td>/api/observations/&lbrace;id&rbrace;</td>
+                    <td>GET</td>
+                    <td>Récupérer une observation par ID</td>
+                </tr>
+                <tr>
+                    <td>/api/observations/&lbrace;id&rbrace;</td>
+                    <td>DELETE</td>
+                    <td>Supprimer une observation</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Routes des vétérinaires -->
+        <h3>Vétérinaires</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Route</th>
+                    <th>Méthodes</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>/api/veterinaires</td>
+                    <td>GET</td>
+                    <td>Récupérer tous les vétérinaires</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Routes des consultations -->
+        <h3>Consultations</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Route</th>
+                    <th>Méthodes</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>/api/consultations</td>
+                    <td>GET</td>
+                    <td>Récupérer toutes les consultations</td>
+                </tr>
+                <tr>
+                    <td>/api/consultations/&lbrace;id&rbrace;</td>
+                    <td>GET</td>
+                    <td>Récupérer une consultation par ID</td>
+                </tr>
+                <tr>
+                    <td>/api/consultations</td>
+                    <td>POST</td>
+                    <td>Ajouter une consultation</td>
+                </tr>
+                <tr>
+                    <td>/api/consultations/&lbrace;id&rbrace;</td>
+                    <td>DELETE</td>
+                    <td>Supprimer une consultation</td>
+                </tr>
+                <tr>
+                    <td>/api/consultations/&lbrace;id&rbrace;</td>
+                    <td>PUT</td>
+                    <td>Mettre à jour une consultation</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Scripts Bootstrap -->
+</body>
+</html>

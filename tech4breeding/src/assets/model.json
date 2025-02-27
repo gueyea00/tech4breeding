@@ -1,0 +1,99 @@
+{
+    "format": "layers-model",
+    "generatedBy": "TensorFlow.js v3.11.0",
+    "convertedBy": "TensorFlow.js Converter v3.11.0",
+    "modelTopology": {
+      "class_name": "Sequential",
+      "config": [
+        {
+          "class_name": "InputLayer",
+          "config": {
+            "batch_input_shape": [null, 224, 224, 3],
+            "dtype": "float32",
+            "sparse": false,
+            "name": "input_1"
+          }
+        },
+        {
+          "class_name": "Conv2D",
+          "config": {
+            "filters": 32,
+            "kernel_size": [3, 3],
+            "strides": [1, 1],
+            "padding": "valid",
+            "activation": "relu",
+            "name": "conv2d"
+          }
+        },
+        {
+          "class_name": "MaxPooling2D",
+          "config": {
+            "pool_size": [2, 2],
+            "strides": [2, 2],
+            "padding": "valid",
+            "name": "max_pooling2d"
+          }
+        },
+        {
+          "class_name": "Flatten",
+          "config": {
+            "name": "flatten"
+          }
+        },
+        {
+          "class_name": "Dense",
+          "config": {
+            "units": 128,
+            "activation": "relu",
+            "name": "dense"
+          }
+        },
+        {
+          "class_name": "Dense",
+          "config": {
+            "units": 2,
+            "activation": "softmax",
+            "name": "output"
+          }
+        }
+      ]
+    },
+    "weightsManifest": [
+      {
+        "paths": ["group1-shard1of1.bin"],
+        "weights": [
+          {
+            "name": "conv2d/kernel",
+            "shape": [3, 3, 3, 32],
+            "dtype": "float32"
+          },
+          {
+            "name": "conv2d/bias",
+            "shape": [32],
+            "dtype": "float32"
+          },
+          {
+            "name": "dense/kernel",
+            "shape": [25088, 128],
+            "dtype": "float32"
+          },
+          {
+            "name": "dense/bias",
+            "shape": [128],
+            "dtype": "float32"
+          },
+          {
+            "name": "output/kernel",
+            "shape": [128, 2],
+            "dtype": "float32"
+          },
+          {
+            "name": "output/bias",
+            "shape": [2],
+            "dtype": "float32"
+          }
+        ]
+      }
+    ]
+  }
+  
