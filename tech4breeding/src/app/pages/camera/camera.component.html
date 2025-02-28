@@ -1,15 +1,20 @@
 <div class="container mt-4">
-  <h2 class="text-center">Visualisation des Caméras</h2>
-  <div class="row">
+    <h2 class="text-center">Visualisation des Caméras</h2>
+    
+    <div class="row">
       <div class="col-md-6 mb-3">
-          <div class="video-container">
-              <video #video autoplay muted class="small-video"></video>
-              <button class="btn btn-outline-primary btn-sm" (click)="captureImage()">Capturer</button>
-          </div>
+        <div class="video-container">
+          <video #video autoplay muted class="small-video"></video>
+          <button class="btn btn-outline-primary btn-sm" (click)="captureImage()">Capturer</button>
+        </div>
       </div>
       <div class="col-md-6 mb-3">
-          <canvas #canvas class="small-canvas"></canvas>
-          <p *ngIf="prediction">Résultat: {{ prediction }}</p>
-      </div>
+        <canvas #canvas class="small-canvas"></canvas>
+        <p>
+            <a href="details-analyse" >Details anomalie</a>
+        </p></div>
+    <p *ngIf="prediction">Résultat: {{ prediction }}</p>
+   
+    </div>
   </div>
-</div>
+  

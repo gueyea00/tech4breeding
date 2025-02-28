@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { AuthResponse } from '../../models/AuthResponse'; // Interface pour la réponse d'authentification
+import { jwtDecode } from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root',
@@ -104,15 +105,20 @@ export class AuthService {
   }
 
   /**
-   * Récupère les rôles utilisateur depuis le token ou une autre source.
+   * Récupère les rôles utilisateur depuis le token JWT.
    */
-  // getUserRoles(): string[] {
-  //   const token = this.getToken();
-  //   if (!token) return [];
+  getUserRoles(): string[] {
+    const token = this.getToken();
+    if (!token) return [];
 
-  //   const payload = JSON.parse(atob(token.split('.')[1])); // Décode le payload JWT
-  //   return payload.roles || [];
-  // }
+    try {
+      const decoded: any = jwtDecode(token);  // Décodage du token
+      return decoded.roles || [];
+    } catch (e) {
+      console.error('Erreur de décodage du token', e);
+      return [];
+    }
+  }
 
   /**
    * Supprime le token et les informations utilisateur.
@@ -121,13 +127,11 @@ export class AuthService {
     localStorage.removeItem(this.tokenKey);
     sessionStorage.removeItem(this.userNameKey);
   }
-  getRol(){
-    localStorage.getItem('userRole')  }
 
   /**
    * Supprime uniquement le token.
    */
-  removeToken(): void {
+  removeToken() {
     localStorage.removeItem(this.tokenKey);
   }
 

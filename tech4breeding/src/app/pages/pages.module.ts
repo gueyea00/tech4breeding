@@ -19,13 +19,9 @@ import { UploadComponent } from './upload/upload.component';  // Importez direct
 @NgModule({
   declarations: [
      GatewayComponent,
-     DetailsAnalyseComponent,
-     Dashboard2Component,
-     Dashboard3Component,
-     Dashboard4Component,
-     ContactComponent,
+
      AccueilComponent,
-     UploadComponent,
+
 
   ],
   imports: [

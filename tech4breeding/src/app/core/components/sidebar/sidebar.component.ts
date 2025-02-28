@@ -49,11 +49,13 @@ export class SidebarComponent implements OnInit {
     this.filterMenuByRole();
   }
 
-  checkUserStatus(): void {
+  checkUserStatus() {
     const token = this.authService.getToken();
     if (!token) {
       this.router.navigate(['/login']);
+      
     }
+    return false
   }
 
   toggleSidebar() {

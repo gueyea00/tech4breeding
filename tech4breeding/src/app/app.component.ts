@@ -18,7 +18,7 @@ isAuthPage: any;
 
   ngOnInit(): void {
     this.router.events.subscribe((event) => {
-      if (this.router.url === '/login' || this.router.url==='/passwordForgot' || this.router.url==='/register') {
+      if (this.router.url === '/login' || this.router.url==='/passwordForgot'|| this.router.url==='/forum' || this.router.url==='/register'||this.router.url==='/accueil') {
         this.hideHeaderAndSidebar = true;
       } else {
         this.hideHeaderAndSidebar = false;

@@ -179,7 +179,7 @@ def predict():
 def get_predictions():
     try:
         with SessionLocal() as session:
-            predictions = session.query(Prediction).all()
+            predictions = session.query(Prediction).order_by(Prediction.date.desc()).all()
           # Convertir l'image en base64 pour pouvoir la renvoyer comme JSON
             for prediction in predictions:
                 if prediction.image:  # Supposons que l'image est stockée dans `image_data`
